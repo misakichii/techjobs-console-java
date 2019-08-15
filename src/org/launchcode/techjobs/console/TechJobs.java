@@ -3,6 +3,7 @@ package org.launchcode.techjobs.console;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -11,7 +12,7 @@ public class TechJobs {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -103,7 +104,7 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
@@ -111,6 +112,21 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        //System.out.println("printJobs is not implemented yet");
+        //use size() method to get the number of elements in this list
+
+        //https://stackoverflow.com/questions/5920135/printing-hashmap-in-java
+        if (someJobs.size() != 0) {
+            for (int i = 0; i < someJobs.size(); i++) {
+                //System.out.println(someJobs);
+
+                for (Map.Entry<String, String> entry : someJobs.get(i).entrySet())
+                    System.out.println(entry.getKey() + ":" +
+                            entry.getValue());
+                System.out.println("*****************************");
+            }
+        } else {
+            System.out.println("Invalid entry. Please try again.");
+        }
     }
 }
