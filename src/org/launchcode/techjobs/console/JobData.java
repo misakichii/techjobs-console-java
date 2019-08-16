@@ -148,4 +148,3 @@ public class JobData {
     }
 
 }
-//todo Create Method findByValue
